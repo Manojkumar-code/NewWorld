@@ -1,0 +1,56 @@
+CREATE PROCEDURE sp_get_filtered_file_details
+    @jsonFilter NVARCHAR(MAX)=NULL, -- Input JSON string
+    @tableName NVARCHAR(255)
+AS
+BEGIN
+    -- Declare variables
+    DECLARE @sql NVARCHAR(MAX) = N'SELECT * FROM dbo.'+@tableName+' WHERE 1 = 1 '; -- Base query
+    DECLARE @key NVARCHAR(255), @value NVARCHAR(255);
+
+    -- Check if the JSON filter is empty or contains an empty object
+    IF @jsonFilter IS NULL OR @jsonFilter = N'{}'
+    BEGIN
+		PRINT '@sql ->' + @sql;
+        -- Directly execute the base query if no filters are provided
+        EXEC sp_executesql @sql;
+        RETURN;
+    END
+
+    -- Use OPENJSON to extract key-value pairs from the JSON
+    DECLARE @jsonTable TABLE (
+        [Key] NVARCHAR(255),
+        [Value] NVARCHAR(MAX)
+    );
+
+    -- Insert JSON key-value pairs into a table
+    INSERT INTO @jsonTable ([Key], [Value])
+    SELECT [Key], [Value]
+    FROM OPENJSON(@jsonFilter);
+
+    -- Loop through the key-value pairs from the JSON
+    DECLARE json_cursor CURSOR FOR
+    SELECT [Key], [Value] FROM @jsonTable;
+
+    OPEN json_cursor;
+
+    FETCH NEXT FROM json_cursor INTO @key, @value;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Dynamically build the WHERE clause based on key-value pairs
+        SET @sql = @sql + N' AND ' + QUOTENAME(@key) + N' = ''' + REPLACE(@value, '''', '''''') + '''';
+        
+        -- Fetch the next key-value pair
+        FETCH NEXT FROM json_cursor INTO @key, @value;
+    END;
+
+    -- Close and deallocate cursor
+    CLOSE json_cursor;
+    DEALLOCATE json_cursor;
+
+    -- Print the final SQL for debugging
+    PRINT '@sql ->' + @sql;
+
+    -- Execute the dynamically constructed SQL
+    EXEC sp_executesql @sql;
+END;
