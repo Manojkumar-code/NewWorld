@@ -1,0 +1,40 @@
+CREATE PROCEDURE dbo.sp_ai_sq_update_file_status
+    @Object_Id NVARCHAR(255),
+    @NewStatus NVARCHAR(255)
+AS
+BEGIN
+    -- Validate the input status
+    IF @NewStatus NOT IN ('Uploaded', 'In Progress')
+    BEGIN
+        PRINT 'Error: Invalid status. Valid options are "Uploaded", "In Progress".';
+        RETURN;
+    END
+    
+    -- Declare a table variable to capture the updated records
+    DECLARE @UpdatedRecords TABLE (Object_Id NVARCHAR(255), Job_Id INT, Status NVARCHAR(255), Status_UpdateTime DATETIME);
+
+    -- Update the status for the rows with matching Object_Id where Status is either 'Uploaded' or 'In Progress'
+    UPDATE dbo.ai_sq_fileDetails
+    SET [Status] = @NewStatus,
+        [Status_UpdateTime] = GETDATE()  -- Update the status update time
+    OUTPUT inserted.Object_Id, inserted.Job_Id, inserted.Status, inserted.Status_UpdateTime
+        INTO @UpdatedRecords (Object_Id, Job_Id, Status, Status_UpdateTime)
+    WHERE [Object_Id] = @Object_Id
+      AND [Status] = @NewStatus;
+
+    -- Check if any rows were affected and return the results
+    IF @@ROWCOUNT = 0
+    BEGIN
+        PRINT 'No rows updated. Either the Object_Id does not exist, or the status is not "Uploaded" or "In Progress".';
+    END
+    ELSE
+    BEGIN
+        PRINT 'Status updated successfully.';
+
+        -- Return the updated records
+        SELECT * FROM @UpdatedRecords;
+
+        -- Return the count of updated records
+        SELECT COUNT(*) AS UpdatedCount FROM @UpdatedRecords;
+    END
+END
