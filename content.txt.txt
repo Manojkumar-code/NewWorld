@@ -1,0 +1,145 @@
+### Step-by-Step Instructions to Create Your PowerPoint Presentation
+
+#### Step 1: Open PowerPoint
+- Launch Microsoft PowerPoint and start a new presentation.
+
+#### Step 2: Set Up the Title Slide
+1. **Slide 1: Title Slide**
+   - Click on the first slide (Title Slide).
+   - **Title**: Monthly Project Summary
+   - **Subtitle**: Data Engineering Activities
+   - **Your Name**: [Your Name]
+   - **Position**: Data Engineer
+   - **Date**: [Current Date]
+
+#### Step 3: Create the Executive Summary Slide
+2. **Slide 2: Executive Summary**
+   - Add a new slide (Title and Content layout).
+   - **Title**: Executive Summary
+   - **Content**: "This presentation summarizes my activities and achievements as a Data Engineer over the past month, focusing on database schema creation, modifications, development of stored procedures, and code refactoring."
+
+#### Step 4: Add Key Responsibilities Slide
+3. **Slide 3: Key Responsibilities**
+   - Add a new slide.
+   - **Title**: Key Responsibilities
+   - **Content**:
+     - Role: Data Engineer
+     - Primary Tools:
+       - Databricks
+       - PySpark
+       - Database Stored Procedures
+
+#### Step 5: Overview of Completed Tasks
+4. **Slide 4: Completed Tasks Overview**
+   - Add a new slide.
+   - **Title**: Completed Tasks Overview
+   - **Content** (bullet points):
+     - Task 1: Create Schema
+     - Task 2: Modify Schema
+     - Task 3: Load Dummy Data
+     - Task 4: Develop Dynamic Filter Stored Procedure
+     - Task 5: Refactor Code from Shared Notebook
+
+#### Step 6: Dynamic Filter Stored Procedure Slide
+5. **Slide 5: Dynamic Filter Stored Procedure**
+   - Add a new slide.
+   - **Title**: Dynamic Filter Stored Procedure
+   - **Content**:
+     - Task: Created a stored procedure in the development database that allows for dynamic filtering on any table.
+     - Status: Development and testing are completed successfully.
+
+#### Step 7: Job Trigger Table Updates Slide
+6. **Slide 6: Job Trigger Table Updates**
+   - Add a new slide.
+   - **Title**: Job Trigger Table Updates
+   - **Content**:
+     - Table: job_trigger
+     - Stored Procedure: Developed a stored procedure for the job_trigger table.
+     - Functionality:
+       - Successfully updated and inserted data.
+       - The data is processed in JSON format.
+
+#### Step 8: File Details and Binary Updates Slide
+7. **Slide 7: File Details and Binary Updates**
+   - Add a new slide.
+   - **Title**: File Details and Binary Updates
+   - **Content**:
+     - Tables: file_details and file_binary
+     - Stored Procedure: Created stored procedures for both tables.
+     - Functionality:
+       - Successfully updated and inserted data.
+       - The data is processed in JSON format.
+       - Implemented conditions based on Ishaan's directions.
+       - Conducted testing for both negative and positive flows.
+
+#### Step 9: Submission Data Updates Slide
+8. **Slide 8: Submission Data Updates**
+   - Add a new slide.
+   - **Title**: Submission Data Updates
+   - **Content**:
+     - Table: submission_data
+     - Stored Procedure: Created a stored procedure for the submission_data table.
+     - Functionality:
+       - Successfully updated and inserted data.
+       - The data is processed in JSON format.
+
+#### Step 10: Update File Details Slide
+9. **Slide 9: Update File Details**
+   - Add a new slide.
+   - **Title**: Update File Details
+   - **Content**:
+     - Table: update_file_details
+     - Stored Procedure: Created a stored procedure for the update_file_details table.
+     - Functionality:
+       - Successfully updated and inserted data.
+       - The data is processed in JSON format.
+
+#### Step 11: Code Refactoring Slide
+10. **Slide 10: Code Refactoring**
+    - Add a new slide.
+    - **Title**: Code Refactoring
+    - **Content**:
+      - Task: Refactored code from the notebook shared by Ishaan.
+      - Objectives:
+        - Improved code readability and maintainability.
+        - Enhanced performance and efficiency of the existing code.
+      - Outcome: Successfully implemented changes and conducted testing to ensure functionality.
+
+#### Step 12: Achievements Slide
+11. **Slide 11: Achievements**
+    - Add a new slide.
+    - **Title**: Achievements
+    - **Content**:
+      - Completion of All Tasks: Successfully finished all assigned tasks within the project timeline.
+      - Enhanced Functionality: Improved data handling through the development of dynamic stored procedures and comprehensive testing.
+      - Code Quality Improvement: Increased code quality through refactoring efforts.
+
+#### Step 13: Challenges Encountered Slide
+12. **Slide 12: Challenges Encountered**
+    - Add a new slide.
+    - **Title**: Challenges Encountered
+    - **Content**:
+      - Complexity in Stored Procedures: Addressed challenges in ensuring proper functionality and data integrity across various stored procedures.
+      - Data Format Handling: Ensured correct processing of JSON data across different procedures.
+      - Refactoring Challenges: Navigated complexities in understanding and optimizing existing code.
+
+#### Step 14: Future Plans Slide
+13. **Slide 13: Future Plans**
+    - Add a new slide.
+    - **Title**: Future Plans
+    - **Content**:
+      - Next Steps:
+        - Continue to refine and optimize stored procedures for increased performance.
+        - Explore additional functionalities in Databricks and PySpark for future projects.
+      - Goal: Aim to further enhance data workflows and contribute to project efficiency.
+
+#### Step 15: Q&A Slide
+14. **Slide 14: Q&A**
+    - Add a new slide.
+    - **Title**: Q&A
+    - **Content**: "Open the floor for questions and discussions regarding the projects and tasks completed."
+
+### Step 16: Design and Final Touches
+- **Design**: Choose a consistent design theme that aligns with your company’s branding. Use visuals like icons, charts, and images where appropriate to enhance understanding.
+- **Review**: Go through each slide to ensure that the content is accurate and clearly presented. Adjust font sizes and colors for readability.
+- **Practice**: Rehearse your presentation to ensure a smooth delivery.
